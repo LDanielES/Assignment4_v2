@@ -7,7 +7,7 @@ import (
 )
 
 // Parse HTML file
-var Parser = template.Must(template.ParseFiles("/Frontend/index.html"))
+var Parser = template.Must(template.ParseFiles("index.html"))
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	buf := &bytes.Buffer{}
