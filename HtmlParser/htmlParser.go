@@ -7,11 +7,11 @@ import (
 )
 
 // Parse HTML file
-var HtmlParser = template.Must(template.ParseFiles("/Frontend/index.html"))
+var Parser = template.Must(template.ParseFiles("/Frontend/index.html"))
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	buf := &bytes.Buffer{}
-	err := HtmlParser.Execute(buf, nil)
+	err := Parser.Execute(buf, nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/LDanielES/Assinment4_Copy/Client"
+	HP "github.com/LDanielES/Assinment4_Copy/HtmlParser"
 	"github.com/LDanielES/Assinment4_Copy/Search"
 	"github.com/joho/godotenv"
 )
@@ -40,7 +41,7 @@ func main() {
 
 	// Start server
 	mux.HandleFunc("/search", Search.SearchHandler(newsApi))
-	mux.HandleFunc("/", HtmlParser.IndexHandler)
+	mux.HandleFunc("/", HP.IndexHandler)
 
 	fmt.Println("Listening on :8088...")
 	log.Fatal(http.ListenAndServe(":"+port, mux))

@@ -2,6 +2,7 @@ package Search
 
 import (
 	"github.com/LDanielES/Assinment4_Copy/Client"
+	Htmlparser "github.com/LDanielES/Assinment4_Copy/HtmlParser"
 
 	"bytes"
 	"math"
@@ -75,7 +76,7 @@ func SearchHandler(newsapi *Client.Client) http.HandlerFunc {
 		}
 
 		buf := &bytes.Buffer{}
-		err = HtmlParser.Execute(buf, search)
+		err = Htmlparser.Parser.Execute(buf, search)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
