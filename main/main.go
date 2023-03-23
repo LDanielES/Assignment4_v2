@@ -1,31 +1,16 @@
 package main
 
 import (
-	"Assinment4_Copy/Client"
-	"bytes"
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
+	"github.com/LDanielES/Assinment4_Copy/Client"
+	"github.com/LDanielES/Assinment4_Copy/Search"
 	"github.com/joho/godotenv"
 )
-
-// Parse HTML file
-var HtmlParser = template.Must(template.ParseFiles("/Frontend/index.html"))
-
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	buf := &bytes.Buffer{}
-	err := HtmlParser.Execute(buf, nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	buf.WriteTo(w)
-}
 
 func main() {
 	//Create HTTP request multiplexer
@@ -54,8 +39,8 @@ func main() {
 	mux.Handle("/Frontend/", http.StripPrefix("/Frontend/", StaticFiles))
 
 	// Start server
-	mux.HandleFunc("/search", Search.searchHandler(newsApi))
-	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/search", Search.SearchHandler(newsApi))
+	mux.HandleFunc("/", HtmlParser.IndexHandler)
 
 	fmt.Println("Listening on :8088...")
 	log.Fatal(http.ListenAndServe(":"+port, mux))

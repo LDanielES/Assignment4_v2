@@ -1,15 +1,15 @@
 package Search
 
 import (
-	"Assinment4_Copy/Client"
-	"Assinment4_Copy/main"
+	"github.com/LDanielES/Assinment4_Copy/Client"
+
 	"bytes"
 	"math"
 	"net/http"
 	"net/url"
 	"strconv"
 
-	"github.com/LDanielES/Assignment4/news"
+	"github.com/LDanielES/Assinment4_Copy/news"
 )
 
 type Search struct {
@@ -36,7 +36,7 @@ func (s *Search) PreviousPage() int {
 }
 
 // Handles client search request
-func searchHandler(newsapi *Client.Client) http.HandlerFunc {
+func SearchHandler(newsapi *Client.Client) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		u, err := url.Parse(r.URL.String())
 		if err != nil {
@@ -75,7 +75,7 @@ func searchHandler(newsapi *Client.Client) http.HandlerFunc {
 		}
 
 		buf := &bytes.Buffer{}
-		err = main.HtmlParser.Execute(buf, search)
+		err = HtmlParser.Execute(buf, search)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
