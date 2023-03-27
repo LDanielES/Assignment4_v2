@@ -32,7 +32,10 @@
         >GitHub Repo</a>
       </header>
 
+
+
       <section class="container">
+
         <div class="result-count">
           {{if not .Query }}
             <p>Please enter a search query.</p>
@@ -54,6 +57,9 @@
             {{ end }}
           {{ end }}
         </div>
+
+        
+
         <ul class="search-results">
           {{ range.Results.Articles }}
           <li class="news-article">
@@ -71,6 +77,8 @@
           </li>
           {{ end }}
         </ul>
+
+
         <div class="pagination">
           {{ if . }}
             {{ if (gt .NextPage 2) }}
@@ -89,6 +97,8 @@
             {{ end }}
           {{ end }}
           </div>
+
+
       </section>
 
     </main>

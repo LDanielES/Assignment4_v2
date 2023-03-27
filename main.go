@@ -39,11 +39,6 @@ func main() {
 	StaticFiles := http.FileServer(http.Dir("style"))
 	mux.Handle("/style/", http.StripPrefix("/style/", StaticFiles))
 
-	// serve styles.css file
-	// mux.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {
-	// 	http.ServeFile(w, r, "./main/style.css")
-	// })
-
 	// Start server
 	mux.HandleFunc("/search", Search.SearchHandler(newsApi))
 	mux.HandleFunc("/", HP.IndexHandler)
