@@ -1,8 +1,8 @@
 package Search
 
 import (
-	"github.com/LDanielES/Assinment4_Copy/Client"
-	Htmlparser "github.com/LDanielES/Assinment4_Copy/HtmlParser"
+	"github.com/LDanielES/Assignment4_v2/Client"
+	Htmlparser "github.com/LDanielES/Assignment4_v2/HtmlParser"
 
 	"bytes"
 	"math"
@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/LDanielES/Assinment4_Copy/news"
+	"github.com/LDanielES/Assignment4_v2/news"
 )
 
 type Search struct {

@@ -7,9 +7,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/LDanielES/Assinment4_Copy/Client"
-	HP "github.com/LDanielES/Assinment4_Copy/HtmlParser"
-	"github.com/LDanielES/Assinment4_Copy/Search"
+	"github.com/LDanielES/Assignment4_v2/Client"
+	HP "github.com/LDanielES/Assignment4_v2/HtmlParser"
+	"github.com/LDanielES/Assignment4_v2/Search"
 	"github.com/joho/godotenv"
 )
 

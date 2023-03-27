@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/LDanielES/Assinment4_Copy/news"
+	"github.com/LDanielES/Assignment4_v2/news"
 )
 
 type Client struct {

@@ -1,4 +1,4 @@
-module github.com/LDanielES/Assinment4_Copy
+module github.com/LDanielES/Assignment4_v2
 
 go 1.19
 
